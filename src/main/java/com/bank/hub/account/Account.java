@@ -1,12 +1,19 @@
 package com.bank.hub.account;
 
+import com.bank.hub.common.entity.BaseEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
 @Entity
-public class Account {
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+public class Account extends BaseEntity {
 
     @Id
     private String number;
@@ -23,7 +30,5 @@ public class Account {
 
     private int customerId;
 
-    private LocalDateTime createdAt;
 
-    private LocalDateTime updateAt;
 }
