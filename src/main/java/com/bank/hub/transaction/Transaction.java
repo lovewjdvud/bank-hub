@@ -6,8 +6,14 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 import com.bank.hub.common.entity.BaseEntity;
+import lombok.*;
 
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@ToString
+@Getter
 public class Transaction extends BaseEntity {
 
   @Id
