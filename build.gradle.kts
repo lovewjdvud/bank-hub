@@ -2,10 +2,11 @@ plugins {
     java
     id("org.springframework.boot") version "3.3.0"
     id("io.spring.dependency-management") version "1.1.5"
+    id("com.diffplug.spotless") version "6.25.0"
 }
 
 group = "com.bank"
-version = "0.0.1-SNAPSHOT"
+version = "0.0.1"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_17
@@ -14,6 +15,31 @@ java {
 configurations {
     compileOnly {
         extendsFrom(configurations.annotationProcessor.get())
+    }
+}
+
+spotless {
+    format("yaml") {
+        target("**/*.yaml","**/*.yml")
+        prettier().configFile(".prettierrc")
+    }
+    java{
+        removeUnusedImports()
+        googleJavaFormat()
+        importOrder(
+            "java",
+            "jakarta",
+            "lombok",
+            "org.springframework",
+            "",
+            "\\#",
+            "com.bank",
+            "\\#com.bank"
+        )
+        indentWithTabs(2)
+        indentWithSpaces(2)
+        trimTrailingWhitespace()
+        endWithNewline()
     }
 }
 

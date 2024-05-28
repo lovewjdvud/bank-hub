@@ -1,34 +1,33 @@
 package com.bank.hub.account;
 
-import com.bank.hub.common.entity.BaseEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
+import lombok.*;
+
+import com.bank.hub.common.entity.BaseEntity;
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@ToString
+@Getter
 public class Account extends BaseEntity {
 
-    @Id
-    private String number;
+  @Id private String number;
 
-    private String type;
+  private String type;
 
-    private long balance;
+  private boolean isFirst;
 
-    private String password;
+  private long balance;
 
-    private int employeeId;
+  private String password;
 
-    private int branchId;
+  private int employeeId;
 
-    private int customerId;
+  private int branchId;
 
-
+  private long customerId;
 }

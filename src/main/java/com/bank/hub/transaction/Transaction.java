@@ -1,23 +1,24 @@
 package com.bank.hub.transaction;
 
-import com.bank.hub.common.entity.BaseEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+import com.bank.hub.common.entity.BaseEntity;
+
 @Entity
-public class Transaction  extends BaseEntity  {
+public class Transaction extends BaseEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private long id;
 
-    private long balance;
+  private long balance;
 
-    private  String type;
+  private String type;
 
-    private  long balanceAfterTransaction;
+  private long balanceAfterTransaction;
 
-    private  String accountNumber;
+  private String accountNumber;
 }

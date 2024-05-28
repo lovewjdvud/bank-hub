@@ -3,12 +3,13 @@ version: '3.3'
 
 services:
   bankhub:
-    image: mysql:8.0.37 # Mysql 1.6 버전 이미지 사용
+    image: mysql:8.3.0 # Mysql 1.6 버전 이미지 사용
     container_name: bank-hub # container 이름 설정
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: song13055523! # container 생성 후 root의 비밀번호를 저장한 파일을 설정함으로서 root 비밀번호를 설정
       MYSQL_DATABASE: springboot
+      MYSQL_USER: user
       MYSQL_PASSWORD: song13055523!
     volumes:
       - ./master_db/data:/var/lib/mysql # 각종 log와 index등이 volume이 저장되는 디렉토리
